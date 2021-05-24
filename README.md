@@ -37,8 +37,7 @@ yarn deploy
 
 - Example Parameter : 
 ```
-hardhat run --network rinkeby --token-registry-address <myAddress from dexswap registry>
-
+yarn deploy --network rinkeby --token-registry-address <myAddress from dexswap registry>
 ```
 
 - For the Token Registry Parameters Chek > [This Link](https://github.com/Agin-DropDisco/dexswap-registry) 
