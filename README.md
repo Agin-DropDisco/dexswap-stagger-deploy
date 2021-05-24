@@ -35,7 +35,11 @@ yarn deploy
 ```
 - See All the Task Parameters to deploying to the Chain
 
-- Example Parameter : hardhat run --network rinkeby --token-registry-address <myAddress from dexswap registry>
+- Example Parameter : 
+```
+hardhat run --network rinkeby --token-registry-address <myAddress from dexswap registry>
+
+```
 
 - For the Token Registry Parameters Chek > [This Link](https://github.com/Agin-DropDisco/dexswap-registry) 
 
