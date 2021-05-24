@@ -7,9 +7,8 @@ require("hardhat-etherscan-abi");
 require("hardhat-dependency-compiler");
 require("@nomiclabs/hardhat-ethers");
 
-const dotenv = require('dotenv');
-dotenv.config();
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+const infuraId = process.env.INFURA_ID;
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -23,7 +22,7 @@ module.exports = {
             timeout: 100000,
         },
         rinkeby: {
-            url:"https://rinkeby.infura.io/v3/8d858a3067c74441bea2bf95dd4305b4",
+            url:`https://rinkeby.infura.io/v3/${infuraId}`,
             accounts: [process.env.PRIVATE_KEY],
             network_id: '4',
             gasPrice: 1000000000,

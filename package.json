@@ -17,7 +17,7 @@
         "deploy": "yarn prepare:core && yarn prepare:periphery && yarn prepare:staking && hardhat deploy"
     },
     "devDependencies": {
-        "dexswap-staking-distribution": "git://github.com/Agin-DropDisco/dexswap-staking-distribution.git#v.0.1",
+        "dexswap-staking-distribution": "git://github.com/Agin-DropDisco/dexswap-staking-distribution.git",
         "@commitlint/cli": "^11.0.0",
         "@commitlint/config-conventional": "^11.0.0",
         "@nomiclabs/hardhat-truffle5": "^2.0.0",
