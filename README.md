@@ -1,7 +1,15 @@
-# Swapper Contracts Staging Deployer
+# DexSwap - Swapper Contracts Staging Deployer
 
-A helper repo that can be used to deploy Swapr-related contracts
+A helper repo that can be used to deploy DexSwap - Swapper || related contracts
 (core/periphery/) to any given EVM-compatible network.
+
+All Contract Files :
+- [DexSwap Core](https://github.com/Agin-DropDisco/dexswap-core)
+- [DexSwap Periphery](https://github.com/Agin-DropDisco/dexswap-periphery)
+- [DexSwap Registry](https://github.com/Agin-DropDisco/dexswap-registry)
+- [DexSwap Staking](https://github.com/Agin-DropDisco/dexswap-staking)
+- [DexSwap Staking Distribution](https://github.com/Agin-DropDisco/dexswap-staking-ditribution)
+- [DexSwap Staging Deployer](https://github.com/Agin-DropDisco/dexswap-swapper-staging)
 
 ## Getting started
 
@@ -27,7 +35,10 @@ yarn deploy
 ```
 - See All the Task Parameters to deploying to the Chain
 
-- Example Parameter : hardhat run --network rinkeby --token-registry-address <myAddress from dexswap registry>
+- Example Parameter : 
+```
+yarn deploy --network rinkeby --token-registry-address <myAddress from dexswap registry>
+```
 
 - For the Token Registry Parameters Chek > [This Link](https://github.com/Agin-DropDisco/dexswap-registry) 
 
