@@ -1,4 +1,4 @@
-# Swapper Contracts Staging Deployer
+# DexSwap - Swapper Contracts Staging Deployer
 
 A helper repo that can be used to deploy Swapr-related contracts
 (core/periphery/) to any given EVM-compatible network.
