@@ -1,6 +1,6 @@
 {
     "name": "dexswap-swapper-contracts-staging-deployer",
-    "version": "1.0.0",
+    "version": "0.1.6",
     "description": "A simple Hardhat project to deploy the whole DexSwap contract suite with user-chosen parameters, on any given network.",
     "main": "index.js",
     "author": "Agin DropDisco || gin.dropdisco@gmail.com",
@@ -11,9 +11,6 @@
         "lint:prettier": "prettier -l tasks/*.js",
         "lint:commit-message": "commitlint -e",
         "lint": "yarn lint:eslint && yarn lint:prettier", 
-        "deploy:rinkeby": "yarn hardhat deploy --network rinkeby  --native-asset-wrapper-address 0xc778417E063141139Fce010982780140Aa0cD5Ab --owner-address 0x932fD1ab0a7f02D55055872221D9812d8B431421",
-        "deploy:moonbase": "yarn hardhat deploy --network moonbase  --native-asset-wrapper-address 0xe73763DB808ecCDC0E36bC8E32510ED126910394 --owner-address 0xce5783B241F27F786579cB4F26cD0a2E4fD15318",
-        "deploy:matic": "yarn hardhat deploy --network matic  --native-asset-wrapper-address 0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa --owner-address 0x932fD1ab0a7f02D55055872221D9812d8B431421",
         "deploy": "hardhat deploy",
         "check-surel": "hardhat check-surel"
     },
@@ -24,7 +21,7 @@
         "@nomiclabs/hardhat-web3": "^2.0.0",
         "@typechain/ethers-v5": "^6.0.4",
         "babel-eslint": "^10.1.0",
-        "dexswap-staking-distribution": "git://github.com/Agin-DropDisco/dexswap-staking-distribution.git#0.1.5",
+        "dexswap-staking-distribution": "git://github.com/Agin-DropDisco/dexswap-staking-distribution.git#0.1.6",
         "dotenv": "^8.2.0",
         "eslint": "^7.18.0",
         "hardhat": "^2.0.10",
