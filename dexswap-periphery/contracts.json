@@ -1,0 +1,14 @@
+{
+    "mainnet": {
+      "router": "0x19b71954a64f8b953988AeeB67f423d471878151"
+    },
+
+    "rinkeby": {
+      "router": "0x19b71954a64f8b953988AeeB67f423d471878151"
+    },
+
+    "matic": {
+      "router": "0x6c6C8F8Bc6126894a6866BeAd6e43009139F38b6"
+    }
+
+}
