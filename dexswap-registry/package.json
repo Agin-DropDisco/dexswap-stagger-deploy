@@ -1,0 +1,45 @@
+{
+  "name": "dexswap-token-registry",
+  "version": "0.1.0",
+  "description": "A registry of token lists, curated by the dexswap",
+  "main": "truffle-config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agin-DropDisco/dexswap-registry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Agin-DropDisco/dexswap-registry/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "yarn truffle compile",
+    "deploy:rinkeby": "yarn truffle migrate --network rinkeby",
+    "deploy:ropsten": "yarn truffle migrate --network ropsten",
+    "deploy:matic": "yarn truffle migrate --network matic",
+    "deploy:moonalpha": "yarn truffle migrate --network moonalpha",
+    "test": "npx truffle test",
+    "solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol",
+    "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol"
+  },
+  "author": "Agin DropDisco",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@openzeppelin/cli": "^2.8.1",
+    "@truffle/hdwallet-provider": "^1.0.33",
+    "dotenv": "^8.2.0",
+    "truffle": "^5.1.21",
+    "truffle-assertions": "^0.9.2",
+    "truffle-plugin-verify": "^0.5.8"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^3.0.0",
+    "@openzeppelin/test-helpers": "^0.5.5",
+    "chai-bignumber": "^3.0.0",
+    "prettier": "^2.0.5",
+    "prettier-plugin-solidity": "^1.0.0-alpha.48",
+    "solhint": "^2.3.1",
+    "solhint-plugin-prettier": "^0.0.4"
+  }
+}
