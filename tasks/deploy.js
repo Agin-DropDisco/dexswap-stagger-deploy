@@ -2,6 +2,10 @@ const { task } = require("hardhat/config");
 
 // require EXACT bytecodes
 const {
+    abi: deployerAbi,
+    bytecode: deployerBytecode,
+} = require("../dexswap-core/build/DEXswapDeployer.json");
+const {
     abi: factoryAbi,
     bytecode: factoryBytecode,
 } = require("../dexswap-core/build/DEXswapFactory.json");
@@ -90,20 +94,39 @@ task(
         // periphery
         console.log("Deploying router");
         const routerContract = await new hre.web3.eth.Contract(routerAbi)
-            .deploy({
+        .deploy({
                 data: routerBytecode.toString("hex"),
                 arguments: [
                     factoryContract.options.address,
                     nativeAssetWrapperAddress,
-                ],
-            })
-            .send({ from: accountAddress });
+            ],
+        })
+        .send({ from: accountAddress });
+
+        console.log("Deploying core deployer");
+        const CoreDeployer = await new hre.web3.eth.Contract(deployerAbi)
+        .deploy({
+            data: deployerBytecode.toString("hex"),
+            arguments: [
+                factoryContract.options.address,
+                nativeAssetWrapperAddress,
+                accountAddress,
+                [], [], []
+        ],
+        })
+        .send({ from: accountAddress });
+        // core
+        console.log("Calling DexSwap Deployer...");
+        console.log(`--------------------------------------------------------------------------`);
 
         console.log();
 
         console.log(`::: Core `);
 
         console.log(`::: Factory deployed at address ${factoryContract.options.address}`);
+        console.log(`---------------------------------------------------------------------------`);
+
+        console.log(`::: CoreDeployer ${CoreDeployer.options.address}`);
         console.log(`---------------------------------------------------------------------------`);
 
 
