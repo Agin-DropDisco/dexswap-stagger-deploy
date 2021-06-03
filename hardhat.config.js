@@ -1,20 +1,19 @@
 require("dotenv").config();
-
 require("@nomiclabs/hardhat-truffle5");
 require("./tasks/deploy");
-require("hardhat-deploy");
-require("hardhat-etherscan-abi");
-require("hardhat-dependency-compiler");
-require("@nomiclabs/hardhat-ethers");
+require("./tasks/check-surel");
 
-const dotenv = require('dotenv');
-dotenv.config();
+const INFURA_IDS = process.env.INFURA_ID;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
-
+const PK_1 = process.env.PRIVATE_KEY1;
+const PK_2 = process.env.PRIVATE_KEY2;
+const PK_3 = process.env.PRIVATE_KEY3;
+const PK_4 = process.env.PRIVATE_KEY4;
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
+    
     networks: {
         xdai: {
             url: "https://rpc.xdaichain.com/",
@@ -23,18 +22,18 @@ module.exports = {
             timeout: 100000,
         },
         rinkeby: {
-            url:"https://rinkeby.infura.io/v3/8d858a3067c74441bea2bf95dd4305b4",
+            url:`https://rinkeby.infura.io/v3/${INFURA_IDS}`,
             accounts: [process.env.PRIVATE_KEY],
-            network_id: '4',
+            network_id: 4,
             gasPrice: 1000000000,
             timeout: 100000,
         },
-        moonalpha: {
+        moonbase: {
             url:"https://rpc.testnet.moonbeam.network",
-            accounts: [process.env.PRIVATE_KEY],
-            network_id: '1287',
-            gasPrice: 1000000000,
-            timeout: 100000,
+            accounts: [PK_1, PK_2, PK_3, PK_4],
+            network_id: 1287,
+            gasPrice: 10000000,
+            timeout: 100000
         },
         oasis: {
             url:"https://rpc.oasiseth.org:8545",
@@ -43,7 +42,7 @@ module.exports = {
             gasPrice: 1000000000,
             timeout: 100000
         },
-        matic_tesnet: {
+        matic: {
             url:"https://rpc-mumbai.matic.today",
             accounts: [process.env.PRIVATE_KEY],
             network_id: 80001,
@@ -51,12 +50,41 @@ module.exports = {
             timeout: 100000
         }
     },
+
     etherscan: {
         apiKey: ETHERSCAN_API_KEY,
     },
+
     paths: {
         sources: "./contracts",
         cache: "./cache",
         artifacts: "./artifacts",
     },
+
+    solidity: {
+        compilers: [
+            {
+                version: "0.8.4",
+                settings: {
+                    optimizer: {
+                        enabled: true,
+                        runs: 200,
+                    },
+                },
+            },
+            {
+                version: "0.5.16",
+                settings: {
+                    optimizer: {
+                        enabled: true,
+                        runs: 200,
+                    },
+                },
+            },
+        ],
+    },
+
+    mocha: {
+        timeout: 20000,
+     },
 };
